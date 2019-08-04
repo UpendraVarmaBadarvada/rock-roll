@@ -1,0 +1,691 @@
+/*
+Orange color: #e67e22
+
+*/
+
+
+/* ----------------------------------------------- */
+/* BASIC SETUP */
+/* ----------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*The text-rendering property in CSS allows you to choose quality of text over speed allowing you to fine tune optimization by suggesting to the browser as to how it should render text on the screen*/
+html,
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+/* we are using to clear the floats created by meals section*/
+.clearfix:after {
+    content: ' ';
+    clear: both;
+    display: table;
+    height: 0;
+    visibility: hidden;
+}
+
+
+
+/* ----------------------------------------------- */
+/* REUSABLE COMPONENTS */
+/* ----------------------------------------------- */
+
+/* its used for responsiveness and making the design fluid*/
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* for each and  every section it should have top and bottom padings*/
+section {
+    padding: 80px 0;
+}
+/* grid cols */
+.box {
+    padding: 1%;
+}
+.image-size{
+    width:100%;
+    height:auto;
+    margin-bottom: 15px;
+}
+
+/* ----- HEADINGS ----- */
+
+/*common css for 
+both the headers of 1st three sections*/
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+/*font size is relative to html's selector's font size*/
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+/* we want second heading in center and a relative font size*/
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+/* headings for grid cols*/
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+/*after second heading we want  a line with some height and width which is centered
+and remember when we use after we must have a content*/
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #d35400;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/* ----- PARAGRAPHS ----- */
+
+/* remember in any website we should have a 
+line height between 120 & 150% and set the para in center*/
+.long-para {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+}
+/* para in grid boxes*/
+.box p {
+    font-size: 90%;
+    line-height: 145%;
+}
+
+/*icons*/
+.fa-color{
+    color:#d35400;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+/* ----- BUTTONS ----- */
+/* change the anchor tag into simple text 
+by using text-decoration and add some border radius
+we can change an inline element into a inline block and add some padding 
+and have a transition of changes within a specifice time
+and theese classes belong to form's send button
+*/
+.btn,
+button
+ {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+/*1st button with a border and background color of orange and color of white*/
+.btn-primary,button
+{
+    background-color:  #d35400;
+    border: 1px solid  #d35400;
+    color: #fff;
+    margin-right: 15px;
+}
+/*2nd button with a border of orange and color of orange*/
+.btn-secondary{
+    border: 1px solid  #d35400;
+    color:  #d35400;
+}
+/*psuedo class  
+   when we hover both the buttons
+*/
+
+.btn:hover,button:hover{
+    background-color: #e45b00;
+}
+
+.btn-primary:hover,button:hover{
+    border: 1px solid #e45b00;
+}
+
+.btn-secondary:hover{
+    border: 1px solid #e45b00;
+    color: #fff;
+}
+
+
+/* ----------------------------------------------- */
+/* HEADER */
+/* ----------------------------------------------- */
+
+/*set  back ground image as high as viewport and make it darker
+    and its must fit in:-
+    cover cuts the edges and fixes the image
+*/
+
+header {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(img/hero.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+/* container for main header and buttons and adjust it to a specific position using translate transformation */
+.header-container {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/*logo*/
+.fa-utensils {
+    float: left;
+    margin-top: 20px;
+}
+
+/* Main navi */
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+}
+/*nav links
+make the block elements to inline block rather than inline as inline block will have height and width set to the  elements
+*/
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+}
+/*font size of links should be 90 % of main html font size
+add a transition for border bottom
+and add some padding at the top and bottom of the links
+*/
+.main-nav li a{
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+/* on hover of the nav links it should have orange border at the bottom*/
+.main-nav li a:hover{
+    border-bottom: 2px solid #d35400;
+}
+
+/* sticky navi
+    we want that to be fixed at the top left width  
+    width:100% and z-index 0f 1 and some box shadow
+    z index used for vertical stacking of elements
+*/
+.sticky{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    background-color: #333;
+    z-index:9999;
+    box-shadow: 0 2px 2px #414141;
+}
+.sticky .main-nav{
+    margin-top: 30px;
+}
+.sticky .main-nav li a{
+     padding: 15px 0;
+}
+.sticky .fa-utensils{
+    margin: 5px 0;
+}
+
+/*
+mobile navigation button
+and should be displayed less than 768 px;
+*/
+.mobile-nav-icon{
+    float:right;
+    margin-top: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+
+/* ----------------------------------------------- */
+/* FEATURES-Para in heading part */
+/* ---------------------------------------------- */
+.   section-features .long-para {
+    margin-bottom: 30px;
+}
+
+
+/* ----------------------------------------------- */
+/* MEALS */
+/* ----------------------------------------------- */
+/*meals conatiner:- 
+it doesnt require any padding
+*/
+.section-meals {
+    padding: 0;
+}
+/*list width should be equal to 100%*/ 
+.meals-showcase {
+    list-style: none;
+}
+/* 4 images on a row so use float left to be side by side
+and have its width 25%
+list element
+*/
+.meals-showcase li {
+    float: left;
+    width: 25%;
+}
+/*figure:-
+    and no margin and figure should not overflow on scaling the image
+    set its background color as black so as we can add transperancy to image 
+*/
+.meal-photo {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+/* set image's height to auto and scale it to get animation on hover of it
+add transperancy to the image
+width 100 means its equal to its parent's width that is 25%
+*/
+.meal-photo img {
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+}
+/* figure caption*/
+figcaption{
+    margin-bottom: 25px;
+    color:#d35400;
+}
+/* on hovering the image it should scale much more and increase its opacity */
+.meal-photo img:hover {
+    opacity: 1;
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+}
+/* adjust the pizza name to right*/
+.piz{
+    margin-left: 5px;
+}
+
+/* 
+-----
+-----
+How it works 
+-----
+-----
+*/
+
+/* fourth part  */
+/* 1st box
+1st box should be in center;
+text-align: works not only for text but for also all inline and inline block elements
+*/
+.section-steps{
+    background-color:#696565;
+}
+.steps-box:first-child{
+    text-align: center;
+    padding-right:3%;
+    margin-top: 50px;
+}
+/*second box*/
+.steps-box:last-child{
+    padding-left: 3%;
+    margin-top:70px;
+} 
+/* left side box's phone image*/
+
+/*each step should have a margin bottom of 50px*/
+.works-step{
+    margin-bottom: 50px;
+}
+/* set space between last step and the buttons*/
+.works-step:last-of-type{
+    margin-bottom: 80px;
+}
+/* circle representing no in each step*/ 
+.works-step div{
+    color:#d35400;
+    border:3px solid #d35400;
+    display: inline-block;
+    border-radius: 50%;
+    height:55px;
+    width:55px;
+    text-align:center;
+    padding:5px;
+    float:left;
+    font-size:150%;
+    margin-right:10px;
+}
+/* app buttons*/
+.btn-app img{
+    height:50px;
+    width: auto;
+    margin-right: 10px;
+}
+/*iphone image*/
+.app-screen {
+    width: 50%;
+}
+/*
+-----
+-----
+cities
+------
+------
+*/
+/*twitter account*/
+.city-feature a{
+    border-bottom:1px solid  #d35400;
+    text-decoration: none;
+    color:#d35400;
+    -webkit-transition: border-bottom 0.2s color 0.2s;
+    transition: border-bottom 0.2s color 0.2s;
+}
+.city-feature a:hover{
+    color:#fff;
+    border-bottom: 1px solid transparent;
+}
+/*city header*/
+.city h3{
+    margin-bottom: 15px;
+}
+/*city details*/
+.city-feature{
+    margin-bottom: 5px;
+}
+/* icon in city feature to be formatted and aligned with text  to its side*/
+.city-feature i{
+    margin-right: 5px;
+    margin-top:-5px;
+    /*aligning text and icons in same line*/
+    vertical-align:middle;
+    /*vertical alignment of text*/
+    line-height: 120%;
+}
+/*
+-------
+-------
+testimonials
+-------
+-------
+*/
+/* cover cuts the edges and fixes the image*/
+.section-testimonials{
+    background-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))),url(img/pizza.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(img/pizza.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*blockquote elements*/
+blockquote{
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+}
+/* put a quotation mark and adjust it to somewhat right*/
+blockquote:before{
+    content:"\201C";
+    font-size:500%;
+    position: absolute;
+    top:-5px;
+    left:-3px;
+}
+
+/* make the cite block element as to place the image and text next to it side by side*/
+cite{
+    margin-top: 25px;
+    font-size: 90%;
+    display: block;
+}
+/* make the cites image round after decreasing height*/
+cite img{
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    /*image and text aligned side by side*/
+    vertical-align: middle;
+}
+/*
+---------
+---------
+plans
+---------
+---------
+*/
+section-plans{
+    background-color:#555;
+}
+/*width is 90% of parent i.e col
+and it has a box shadow for y axis only not x axis and also has a shadow
+*/
+.plan-box{
+    background-color:#696565;
+    border-radius:5px;
+    width:90%;
+    margin-left: 5%;
+    -webkit-box-shadow: 0 3px 3px #333;
+    box-shadow: 0 3px 3px #333;
+}
+/* remember we have 3 div's*/
+.plan-box div{
+    padding: 15px;
+    border-bottom: 1px solid #bebebe;
+}
+/*first div*/
+.plan-box div:first-child{
+    background-color: #525050;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+/*sign up button*/
+.plan-box div:last-child{
+    text-align: center;
+    border-bottom: 0;
+}
+.plan-price{
+    font-size: 300%;
+    margin-bottom: 10px;
+    font-weight:100; 
+    color:#d35400;
+}
+/* font size is raltive to the parent element plant-price
+reduce the size of / after text
+*/
+.plan-price span{
+    font-size:30%;
+    font-weight: 300;
+}
+.plan-price-meal{
+    font-size:80%;
+}
+.plan-box ul{
+    list-style: none;
+}
+.plan-box ul li{
+    padding:5px 0;
+}
+/*
+----
+----
+form
+-----
+-----
+*/
+.section-form{
+    background-color: #fff;
+    color:#333;
+}
+/* give some specific width to the form*/
+.contact-form{
+    margin:0 auto;
+    width:60%;
+}
+/*add some grey color border to the inputs and make them 100% full width to the container*/
+input[type=text],
+input[type=email],
+select,
+textarea{
+    width:100%;
+    padding:7px;
+    border-radius: 3px;
+    border:1px solid #ccc;
+}
+textarea{
+    height:100px;
+}
+input[type=checkbox]{
+    margin:10px 5px 10px 0;
+}
+/* remove focus from inputs*/
+*:focus{
+        outline: none;
+}
+/*our google maps come here*/
+.map{
+    width:100%;
+    height:500px;
+    margin-bottom: 25px;
+}
+
+/*
+------
+------
+------
+Footer
+-------
+-------
+*/
+.footer-nav{
+    float:left;
+}
+.footer-nav li,.footer-social li{
+    list-style: none;
+    display: inline-block;
+    margin:40px 5px 5px 5px;
+}
+.footer-nav li a,.footer-social li i{
+    color:#a3a3a3;
+    text-decoration: none;
+}
+.footer-nav li a{
+    font-size: 90%;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+.footer-social li i{
+    font-size:100%;
+}
+.footer-nav li a:hover{
+    color:#fff;
+}
+.footer-social{
+    float:right;
+}
+/* below para in footer*/
+footer .row:last-child{
+    color:#a3a3a3;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.fa-facebook,
+.fa-twitter-square,
+.fa-google-plus-g,
+.fa-instagram{
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+/*social media links changes colors on hovering*/
+.fa-facebook:hover{
+    color:#3b5998
+}
+.fa-twitter-square:hover{
+    color:#1da1f2
+}
+.fa-google-plus-g:hover{
+    color:#db4437
+}
+.fa-instagram:hover{
+    color:#c32aa3;
+}
+
+
+/* animated css properties*/
+
+.animate-1,
+.animate-2,
+.animate-3
+{
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+.animate-4{
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+/*opacity 1 means full color or no transperancy*/
+.animate-1.animated,
+.animate-2.animated,
+.animate-3.animated
+{
+    opacity: 1;
+}
+
+
+    
+
+
+
+
+
+
+

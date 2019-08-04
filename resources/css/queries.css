@@ -1,0 +1,153 @@
+/* media queries goes here*/
+
+/* the below media query works for small phones only if 
+max width is 0 to 480px*/
+@media only screen and (max-width: 480px){
+    section { padding: 25px 0; }
+    .contact-form {width: 100%; }
+}
+/* the below media query works for ipads only if 
+max width is 481 to 767px*/
+@media only screen and (max-width: 767px){
+    body{
+        font-size: 16px;
+    }
+    section{
+        padding: 30px 0;
+    }
+    
+    .row,
+    .header-container{
+       padding:0 4%;
+    }
+    .header-container{
+       margin-top: 50px; 
+    }
+    
+    /* some space between each every column at the bottom*/
+    .col{
+        padding-bottom: 4%;
+    }
+  
+    
+    
+    
+   
+    /* creating mobile type button and placing our nav in that*/
+    
+    .main-nav{
+        display: none;
+    }
+    
+    .mobile-nav-icon {display: inline-block;}
+    
+    .main-nav {
+        float: left;
+        margin-top: 25px;
+        margin-left: 25px;
+    }
+    .main-nav li {
+        display: block;
+    }
+    .main-nav li a{
+        display: block;
+        border: 0;
+        padding: 10px 0;
+        font-size: 100%;
+    }
+    .sticky .main-nav { margin-top: 10px; }
+    .sticky .main-nav li a{ padding: 10px 0; }
+    .sticky .mobile-nav-icon { margin-top: 10px; }
+   
+    
+    
+    
+    h1 { font-size: 180%; }
+    h2 { font-size: 150%; }
+    
+    .long-para {
+        width: 100%;
+        margin-left: 0%;
+    }
+    
+    /* steps section*/
+    
+    .app-screen { width: 40%; }
+    .steps-box:first-child { text-align: center; }
+   
+    /* circle in works step*/
+    .works-step div {
+        height: 40px;
+        width: 40px;
+        margin-right: 15px;
+        padding: 4px;
+        font-size: 120%;
+    }
+    
+    .works-step { margin-bottom: 20px; }
+    .works-step:last-of-type { margin-bottom: 20px; }
+    
+    .fa-bars{
+        color:#fff !important;
+    }
+    
+    
+}
+
+
+/*ipad portratit mode
+    768 to 1024px*/
+@media only screen and (max-width: 1023px){
+    /* just by changing font size here every where font size reduced as we have set them relative that is in %*/
+    body{
+        font-size: 18px;
+    }
+    section{
+        padding:60px 0;
+    }
+    /*features para*/
+    .long-para{
+        width:80%;
+        margin-left: 10%;
+    }
+    /*how it works*/
+    .steps-box{
+        margin-top: 10px;
+    }
+   .steps-box:last-child { margin-top: 10px; }
+    .works-steps { margin-bottom: 40px; }
+    .works-step:last-of-type { margin-bottom: 60px; }
+    .app-screen{
+        width:50%;
+    }
+    .city-feature { font-size: 90%; }
+    
+    /*plan section
+    make its width: 100%
+    */
+    .plan-box {
+        width: 100%;
+        margin-left: 0%;
+    }
+    .plan-price { font-size: 250%; }
+    .contact-form { width: 80%; }
+    
+     
+}
+
+/*big tablets
+upto 1200px
+*/
+@media only screen and (max-width: 1200px){
+    /*we dont want fixed width for the header container*/
+    .header-container {
+    position: absolute;
+    width: 100%;
+    padding: 0 2%;
+
+    }
+    /* add some padding to every row*/
+    .row{
+        padding: 0 2%;
+    }
+}
