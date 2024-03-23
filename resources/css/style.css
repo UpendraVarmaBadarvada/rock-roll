@@ -22,7 +22,6 @@ body {
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
     font-size: 20px;
-    text-rendering: optimizeLegibility;
     overflow-x: hidden;
 }
 /* we are using to clear the floats created by meals section*/
@@ -237,7 +236,7 @@ and add some padding at the top and bottom of the links
     font-size: 90%;
     border-bottom: 2px solid transparent;
     -webkit-transition: border-bottom 0.2s;
-    transition: border-bottom 0.2s;
+    transition: border-bottom 5s;
 }
 /* on hover of the nav links it should have orange border at the bottom*/
 .main-nav li a:hover{
@@ -286,7 +285,7 @@ and should be displayed less than 768 px;
 /* ----------------------------------------------- */
 /* FEATURES-Para in heading part */
 /* ---------------------------------------------- */
-.   section-features .long-para {
+.section-features .long-para {
     margin-bottom: 30px;
 }
 
@@ -398,7 +397,7 @@ text-align: works not only for text but for also all inline and inline block ele
     width:55px;
     text-align:center;
     padding:5px;
-    float:left;
+    float: none;
     font-size:150%;
     margin-right:10px;
 }
